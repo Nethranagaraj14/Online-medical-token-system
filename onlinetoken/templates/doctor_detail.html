@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+       background-image:url("https://media.istockphoto.com/id/165489882/vector/air-flow.jpg?s=612x612&w=0&k=20&c=63djVUrVTyBCpFRN1r5STD9lddHjrP2XXDqTCHzYy-E=");
+       background-size: 1500px 770px;
+       background-repeat: no-repeat;
+    }
+    .accepbutton{
+      
+    }
+</style>
+<body>
+    <h1 >{{ doctor.user.username }}</h1>
+<!-- Display other doctor details -->
+
+{% for appointment in appointments %}
+  <div>
+   
+    {% if appointment.accepted %}
+      <p>Status: <p style="color:  rgb(36, 227, 36);">Accepted</p></p>
+    {% elif appointment.status == "declined" %}
+      <p>Status: Declined</p>
+    {% else %}
+    <div style="background-color: rgb(187, 194, 198);border-radius:20px;height: 40px;padding-top: 20px;padding-bottom: 10px;margin-top:40px">
+      <h3 style="padding-left: 3%;">Status: Pending<button class="acceptbutton" style="background-color: rgb(36, 227, 36); width: 70px;height:35px ; margin-left:70%"> <a href="{% url 'accept_appointment' appointment.id %}" ><h4 style="color: white;">Accept</h4></a></button> /<button style="background-color: rgb(237, 21, 21); width: 70px;height:35px " > <a href="{% url 'decline_appointment' appointment.id %}"> <h4 style="color: white;">Decline</h4></a></button></h3>
+    </div>
+    {% endif %}
+
+  </div>
+  <p><a href="{% url 'patient_status' appointment.patient.id %}">View Patient Status</a></p>
+{% endfor %}
+
+
+
+</body>
+</html>
+{% endblock %}
+
+
+
+
+
+

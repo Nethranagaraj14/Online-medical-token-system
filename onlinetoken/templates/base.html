@@ -1,0 +1,157 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    nav{
+background-color: rgb(185, 223, 223);
+
+}
+nav ul{
+width: 96%;
+list-style: none;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+padding:10px;
+padding-bottom: 5px;
+}
+
+nav li{
+height: 20px;
+}
+
+nav a{
+height: 100%;
+padding: 0 30px;
+text-decoration: none;
+display: flex;
+align-items: center;
+color: black;
+}
+
+nav a:hover{
+background-color: #f0f0f0;
+}
+
+nav li:first-child{
+margin-right: auto;
+}
+
+.sidebar{
+position: fixed;
+top: 0;
+right: 0;
+height: 100vh;
+width: 250px;
+z-index: 999;
+background-color: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+display: none;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+
+
+
+
+
+}
+
+.sidebar li{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+width: 100%;
+margin-top: 30px;
+}
+
+.sidebar a{
+width: 100%;
+}
+
+*{
+margin: 0;
+padding: 0;
+}
+
+.ourlogo{
+    background-color: rgb(185, 223, 223);
+    color:#ffffff;
+    display:inline-block;
+    width:96%;
+    margin-top: 20px;
+ }
+    
+    .logoimage{
+       width:44px;
+       display: inline;
+       padding-bottom: 20px;
+    }
+
+    .footer{
+        background-color:rgb(226, 235, 237);
+        color: white;
+        text-align: center;
+        margin-top: 120px;
+        padding: 20px;
+        
+        margin-left: 0;
+        
+    }
+</style>
+
+<body>
+    <img class="logoimage" src="https://img.freepik.com/free-vector/hospital-logo-design-vector-medical-cross_53876-136743.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709078400&semt=ais">
+
+    
+    <div class="ourlogo">
+        <!-- side bar  -->
+        <nav>
+           <ul class="sidebar">
+               <li onclick=hideSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">About Us</a></li>
+               <li><a href="#">Log Out</a></li>
+           </ul>
+           <ul>
+              <li><h2>EliteCare</h2></li>
+              <li onclick=showSideBar() style="display: inline-block;"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="35"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+          </ul>
+
+          <span>Hello,</span>
+          <span><a href="{% url 'loginpage' %}">logout</a></span>
+          <nav>
+           <!-- side bar ending -->
+          </div>
+
+          <script>
+            function showSideBar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+            function hideSideBar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+         </script>
+     
+{% block content %}
+
+{% endblock %}
+ 
+
+<!-- <footer>
+<div class="footer">
+    <h4>Contact</h4>
+    <p>+91 9345587945</p>
+    <p>elitecare@gmail.com</p>
+</div>
+</footer> -->
+
+</body>
+</html>

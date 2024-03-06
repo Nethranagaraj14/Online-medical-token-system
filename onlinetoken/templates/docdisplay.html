@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+    
+   <title>Doctordetails</title>
+   
+ 
+   
+</head>
+
+<style>
+   body{
+      background-image:url("https://media.istockphoto.com/id/165489882/vector/air-flow.jpg?s=612x612&w=0&k=20&c=63djVUrVTyBCpFRN1r5STD9lddHjrP2XXDqTCHzYy-E=");
+      background-size: 1500px 1100px;
+      background-repeat: no-repeat;
+   }
+   
+    .card
+      {
+        width:76%;
+        margin-top: 15px;
+   
+      }
+      .btn{
+        background-color:rgb(163, 186, 250);
+        color: #ffffff;
+
+      }
+
+      .detail{
+        margin-top: 30px;
+        margin: 50px;
+        /* padding-left: 50%; */
+        
+      }
+
+      .mor{
+        background-color:rgb(235, 231, 231) ;
+        width: 80%;
+        height: 70px;
+        /* padding: 10px; */
+        
+        border-radius: 30px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        margin-left: 10%;
+        
+      }
+
+      .aft{
+        background-color: rgb(235, 231, 231);
+        width: 80%;
+        height: 70px;
+        padding: 20px;
+        padding-top: 20px;
+        border-radius: 30px;
+        margin-top: 40px;
+        margin-left: 10%;
+        
+      }
+
+      .eve{
+        background-color: rgb(235, 231, 231);
+        width: 80%;
+        height: 70px;
+        /* padding: 10px; */
+        padding-top: 30px;
+        border-radius: 30px;
+        margin-top: 40px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        margin-left: 10%;
+       
+      }
+   
+</style>
+<body>
+   <center>
+      <h2 style="color: rgb(163, 186, 250);">Doctor Details</h2>
+   </center>
+   
+ 
+   
+    
+    <h5 class="detail" >👨🏽‍⚕️{{user.username}}</h5>
+    <!-- <h5 class="detail" >📌{{user.street}}</h5> -->
+    <h5 class="detail">🎓{{item.study}}</h5>
+    <h5 class="detail">📞{{item.contact}}</h5>
+    <div class="mor">
+        <center>
+            <a href="{% url 'period' %}"><h5>🥪MORNING</h5></a>
+        </center>
+    </div>
+
+    <div  class="aft">
+        <center>
+            <a href="{% url 'period' %}"><h5>🍛AFTERNOON</h5></a>
+        </center>
+    </div>
+
+    
+    <div class="eve">
+        <center>
+            <a href="{% url 'period' %}"><h5>🍿EVENING</h5></a>
+        </center>
+    </div>
+
+    {% endblock %}
+    
+
+
+  
+    
+    

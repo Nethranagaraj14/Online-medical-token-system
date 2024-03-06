@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Status</title>
+</head>
+<body>
+    <h1>Patient Status</h1>
+    {% if appointment_status %}
+        <p>Your appointment status:</p>
+        <p>Status: {{ appointment_status }}</p>
+        {% if appointment_status == "Pending" %}
+            <p>Please wait for the doctor to respond.</p>
+        {% elif appointment_status == "Accepted" %}
+            <p>Your appointment has been accepted.</p>
+        {% elif appointment_status == "Declined" %}
+            <p>Your appointment has been declined.</p>
+        {% endif %}
+    {% else %}
+        <p>Please log in to view your appointment status.</p>
+    {% endif %}
+</body>
+</html>
+
+
+

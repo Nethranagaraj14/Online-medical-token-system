@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="static\onlinetoken\style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+    
+   <title>Hospitals</title>
+   
+ 
+   
+</head>
+
+<style>
+   body{
+      background-image:url("https://media.istockphoto.com/id/165489882/vector/air-flow.jpg?s=612x612&w=0&k=20&c=63djVUrVTyBCpFRN1r5STD9lddHjrP2XXDqTCHzYy-E=");
+      background-repeat: no-repeat;
+      background-size: 1500px 770px;
+   
+   }
+   
+
+      .card
+      {
+        width:86%;
+        margin-top: 15px;
+   
+      }
+
+      .btn{
+        background-color:rgb(163, 186, 250);
+        color: #ffffff;
+
+      }
+    /* Side Bar Css */
+      
+
+/* Side bar css ending */
+   
+</style>
+<body>
+   
+   <center>
+      <h2 style="color: rgb(163, 186, 250);">Hospitals</h2>
+   </center>
+   
+ 
+   <!-- Search functionality -->
+   <div class="container">
+    <div class="row">
+       <div class="col-md-12">
+          <form class="card card-sm">
+             <div class="card-body row no-gutters align-items center">
+                <div class="col">
+                   <input type="search" name="item_name" placeholder="search" class="form-control form-control-borderless">
+
+                </div>
+                <div class="col-auto">
+                   <button class="btn" type="submit" >Search</button>
+                </div>
+             </div>
+          </form>
+       </div>
+    </div>
+
+    <!-- Hospital display -->
+
+    <div class="row">
+      {% for hospital in hospital_objects %}
+        <div class="col-md-3">
+           <div class="card">
+            <a href="{% url 'department' hospital.hid %}" class="card-link">
+               <img src="{{hospital.image}}" class="card-img-top">
+              <div class="card-body">
+                 <div class="card-title">
+                    {{hospital.hname}}
+                 </div>
+              </div>
+           </div>
+        </div>    
+        {% endfor %} 
+  </div>
+  <!-- side bar js -->
+
+<!-- side bar js ending -->
+
+
+</body>
+</html>
+
+{% endblock %}

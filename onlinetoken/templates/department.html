@@ -45,21 +45,22 @@
  
    <!-- Search functionality -->
    <div class="container">
-    <div class="row">
-       <div class="col-md-12">
-          <form class="card card-sm">
-             <div class="card-body row no-gutters align-items center">
-                <div class="col">
-                   <input type="search" name="item_name" placeholder="search" class="form-control form-control-borderless">
-
-                </div>
-                <div class="col-auto">
-                   <button class="btn" type="submit" >Search</button>
-                </div>
-             </div>
-          </form>
-       </div>
-    </div>
+      <div class="row">
+         <div class="col-md-12">
+            <form class="card card-sm">
+               <div class="card-body row no-gutters align-items center">
+                  <div class="col">
+                     <input type="search" name="item_name" placeholder="search" class="form-control form-control-borderless">
+  
+                  </div>
+                  <div class="col-auto">
+                     <button class="btn" type="submit" >Search</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+  
 
     <!-- Department display -->
 
@@ -67,11 +68,11 @@
       {% for department in departments_in_hospital %}
         <div class="col-md-3">
            <div class="card">
-            <a href="{% url 'doctor' department.did %}" class="card-link">
-              <img  src="{{department.image}}" class="card-img-top">
+            
+              <img style="height: 220px;" src="{{department.image}}" class="card-img-top">
               <div class="card-body">
-                 <div class="card-title">
-                    {{department.dname}}
+               <a  href="{% url 'doctor' department.did %}" class="card-link"><div style="height: 30px;"class="card-title"> {{department.dname}}</a>
+                  
                  </div>
               </div>
            </div>

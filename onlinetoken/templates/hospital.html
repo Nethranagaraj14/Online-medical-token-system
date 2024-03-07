@@ -21,7 +21,7 @@
    body{
       background-image:url("https://media.istockphoto.com/id/165489882/vector/air-flow.jpg?s=612x612&w=0&k=20&c=63djVUrVTyBCpFRN1r5STD9lddHjrP2XXDqTCHzYy-E=");
       background-repeat: no-repeat;
-      background-size: 1500px 770px;
+      background-size: 1500px 800px;
    
    }
    
@@ -75,17 +75,20 @@
       {% for hospital in hospital_objects %}
         <div class="col-md-3">
            <div class="card">
-            <a href="{% url 'department' hospital.hid %}" class="card-link">
+            
                <img src="{{hospital.image}}" class="card-img-top">
+               
               <div class="card-body">
-                 <div class="card-title">
-                    {{hospital.hname}}
+               <a href="{% url 'department' hospital.hid %}" class="card-link">{{hospital.hname}}<div class="card-title"></a>
+                  
                  </div>
               </div>
            </div>
         </div>    
         {% endfor %} 
   </div>
+
+
   <!-- side bar js -->
 
 <!-- side bar js ending -->

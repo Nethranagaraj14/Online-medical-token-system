@@ -83,9 +83,10 @@
 <!-- {% endfor %} -->
 
 {% for doctor in doctors %}
-
-<a href="{% url 'docdisplay' doctor.id %}">{{doctor.user}}</a>
+<div>
+<h5 style="margin: 30px;margin-left:90px; background-color:rgb(224, 221, 221);width: 80%;height:50px;padding-top:10px;padding-left:20px;"><a href="{% url 'docdisplay' doctor.id %}">{{doctor.user}}</a></h5>
 {% endfor %}
+</div>
 </body>
 
 {% endblock %}

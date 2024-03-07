@@ -18,14 +18,14 @@
     }
 </style>
 <body>
-    <h1 >{{ doctor.user.username }}</h1>
+    <h1 style="margin-top: 15px;text-align:center;">{{ doctor.user.username }}</h1>
 <!-- Display other doctor details -->
 
 {% for appointment in appointments %}
   <div>
    
     {% if appointment.accepted %}
-      <p>Status: <p style="color:  rgb(36, 227, 36);">Accepted</p></p>
+      <h3 style="margin:15px;margin-top:20px;text-align:center">Status: <h3 style="color:  rgb(36, 227, 36); margin:15px;text-align:center;">Accepted</h3></h3>
     {% elif appointment.status == "declined" %}
       <p>Status: Declined</p>
     {% else %}
@@ -35,7 +35,7 @@
     {% endif %}
 
   </div>
-  <p><a href="{% url 'patient_status' appointment.patient.id %}">View Patient Status</a></p>
+  <!-- <p><a href="{% url 'patient_status' appointment.patient.id %}">View Patient Status</a></p> -->
 {% endfor %}
 
 
